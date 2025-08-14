@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Application</title>
+
+    <link href="https://api.fontshare.com/v2/css?f[]=hind@300,400,500,600,700,1&f[]=pilcrow-rounded@400,500,600,700,900,1&f[]=quicksand@300,400,500,600,700,1&f[]=britney@300,400,700,1000,1&f[]=ranade@300,2&f[]=sharpie@800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: #462e4f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 3fr 1.5fr;
+    height: 100vh;
+    gap: 10px;
+    padding: 15px;
+}
+.header{
+    grid-area: 1/1/2/5;
+    background-color: #9a8399;
+    color: #28172e;
+    font-family: 'Britney', cursive;
+    text-align: center;
+    font-size: 120px;
+    border-radius: 30px;
+}
+.num_count{
+    grid-area: 2/2/3/4;
+    background-color: #9a8399;
+    border-radius: 30px;
+    color: #28172e;
+    font-size: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+}
+.minus{
+    grid-area: 3/2/4/3;
+    background-color: #9a8399;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+.plus{
+    grid-area: 3/3/4/4;
+    background-color: #9a8399;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+button{
+    font-size: 120px;
+    color: #9a8399;
+    border-color: #28172e;
+    border-radius: 30px;
+    background-color: #28172ea7;
+}
+button:hover{
+    background-color: #28172e;
+    transition: all 1s;
+}
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">Counter App</div>
+        <div class="num_count">
+            <h1 id="number">0</h1>
+        </div>
+        <div class="minus">
+                <button onclick="subtraction()" class="minus_button"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <div class="plus">
+                <button onclick="addition()" class="plus_button"><i class="fa-solid fa-plus"></i></button>
+        </div>
+    </div>
+
+
+    <script>
+        let count=0;
+
+    function addition(){
+        count++;
+        document.getElementById("number").innerText=count;
+    }
+    function subtraction(){
+        count--;
+        document.getElementById("number").innerText=count;
+}
+    </script>
+</body>
+</html>

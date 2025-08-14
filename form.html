@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div id="forms">
+            <form>
+                <h1 id="heading">Form</h1>
+            <label for="email" >Enter your Email:</label><br><br>
+            <input type="text" id="email" name="email" required><br><br>
+            <label for="pwd">Enter your password:</label><br><br>
+            <input type="password" id="password" name="pwd" required><br><br><br>
+            <button type="submit" class="login">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("forms").addEventListener("submit",function(event){
+            event.preventDefault();
+
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+
+            let emailPattern= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            let passwordPattern=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            if(!emailPattern.test(email)){
+                alert("Invalid email format!");
+                return;
+            }
+            if(!passwordPattern.test(password)){
+                alert("Password must be at least of 8 characters.No special characters are included.");
+                return;
+            }
+            alert("Form submitted successfully!");
+        });
+    </script>
+</body>
+</html>
